@@ -1,0 +1,4 @@
+# Dépendances du projet Gestionnaire de Tâches
+
+# Interface graphique
+PySide6>=6.6.0

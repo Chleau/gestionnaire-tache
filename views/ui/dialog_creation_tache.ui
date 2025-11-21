@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogCreationTache</class>
+ <widget class="QDialog" name="DialogCreationTache">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>565</width>
+    <height>525</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Nouvelle tâche</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBoxInfos">
+     <property name="title">
+      <string>Informations générales</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0" colspan="2">
+       <widget class="QLabel" name="titleLabel">
+        <property name="text">
+         <string>Créer une nouvelle tâche !</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelTitre">
+        <property name="text">
+         <string>Titre *</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEditTitre">
+        <property name="placeholderText">
+         <string>Entrez le titre de la tâche</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="labelDescription">
+        <property name="text">
+         <string>Description</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPlainTextEdit" name="plainTextEditDescription">
+        <property name="placeholderText">
+         <string>Description détaillée (optionnel)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_date_debut">
+        <property name="text">
+         <string>Commencer à partir de :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QDateTimeEdit" name="dateTimeEditDebut">
+        <property name="displayFormat">
+         <string>dd/MM/yyyy HH:mm</string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_date_fin">
+        <property name="text">
+         <string>Date de fin prévu :</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QDateTimeEdit" name="dateTimeEditFin">
+        <property name="displayFormat">
+         <string>dd/MM/yyyy HH:mm</string>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBoxEtat">
+     <property name="title">
+      <string>État *</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QComboBox" name="comboBoxEtat">
+        <item>
+         <property name="text">
+          <string>À faire</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>En cours</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Réalisé</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Abandonné</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>En attente</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnAnnuler">
+       <property name="text">
+        <string>Annuler</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnCreer">
+       <property name="text">
+        <string>Créer la tâche :)</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnAnnuler</sender>
+   <signal>clicked()</signal>
+   <receiver>DialogCreationTache</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>300</x>
+     <y>570</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>250</x>
+     <y>300</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnCreer</sender>
+   <signal>clicked()</signal>
+   <receiver>DialogCreationTache</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>410</x>
+     <y>570</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>250</x>
+     <y>300</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

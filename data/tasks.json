@@ -1,0 +1,62 @@
+{
+  "tasks": [
+    {
+      "id": "6135e94e-7ef7-4d38-a706-b9849190aa7f",
+      "titre": "Faire les courses",
+      "description": "Faire les courses pour 4 semianes",
+      "date_debut": "2025-10-23T12:21:49.008000",
+      "date_fin": "2025-11-06T12:21:49.010000",
+      "etat": "En cours",
+      "commentaires": [
+        {
+          "id": "1912b219-0b15-4cd2-a694-4d5ea04416d1",
+          "contenu": "test",
+          "date_creation": "2025-11-21T10:07:21.924703"
+        },
+        {
+          "id": "c9f22850-8438-4326-81ff-23a05009def3",
+          "contenu": "test",
+          "date_creation": "2025-11-21T10:08:57.524002"
+        }
+      ]
+    },
+    {
+      "id": "26b51dbd-c5ab-4619-b922-c54fe0279a7f",
+      "titre": "Faire a manger",
+      "description": "Repas du soir",
+      "date_debut": "2025-11-29T13:48:00.934000",
+      "date_fin": "2025-11-30T13:48:00.934000",
+      "etat": "À faire",
+      "commentaires": []
+    },
+    {
+      "id": "e6624236-28aa-4d29-b76c-ba3eb734f377",
+      "titre": "Nettoyer le linge",
+      "description": "LALALALAL",
+      "date_debut": "2025-10-22T11:34:50.762000",
+      "date_fin": "2025-11-01T11:34:50.763000",
+      "etat": "En attente",
+      "commentaires": [
+        {
+          "id": "e7f86c2d-4745-4dd1-99fc-f061cacaa105",
+          "contenu": "test",
+          "date_creation": "2025-11-21T10:02:36.030754"
+        },
+        {
+          "id": "b6843bb7-2eee-49bd-b67e-be0b3a2c0831",
+          "contenu": "test",
+          "date_creation": "2025-11-21T10:02:58.664926"
+        }
+      ]
+    },
+    {
+      "id": "d01f403a-f673-496b-bd80-e8a10c9e272a",
+      "titre": "Ranger le frigo",
+      "description": "c'est le bordel",
+      "date_debut": "2025-10-23T16:19:48.597000",
+      "date_fin": "2025-11-02T16:19:48.597000",
+      "etat": "En attente",
+      "commentaires": []
+    }
+  ]
+}
