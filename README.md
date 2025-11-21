@@ -14,8 +14,18 @@ Application de gestion de tâches avec interface graphique développée avec PyS
 
  Aperçu
 
-<!-- Ajoutez des captures d'écran ici -->
-*Interface principale avec liste des tâches, filtres et actions*
+Page d'accueil
+![alt text](images/accueil.png)
+
+Page de création 
+![alt text](images/creation.png)
+
+Détails d'une tache :
+![alt text](images/detail.png)
+
+Modifier une tahce :
+
+![alt text](images/modification.png)
 
 Architecture
 
