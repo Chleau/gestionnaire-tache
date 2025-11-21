@@ -1,6 +1,6 @@
-# Gestionnaire de Tâches
+Gestionnaire de Tâches
 
-Application de gestion de tâches avec interface graphique développée avec PySide6 (Qt pour Python).
+Application de gestion de tâches avec interface graphique développée avec PySide6 (Qt pour Python)
 
  Fonctionnalités
 
@@ -8,7 +8,7 @@ Application de gestion de tâches avec interface graphique développée avec PyS
 - 5 états de tâche : À faire, En cours, Réalisé, Abandonné, En attente
 - Système de commentaires pour chaque tâche
 - Filtrage par état et tri (date de début, date de fin, titre)
-- Gestion des échéances avec sélecteur de dates intégré
+- Gestion des échéances
 - Persistance automatique des données en JSON
 - Interface personnalisable via fichier QSS (feuille de style Qt)
 
@@ -52,7 +52,7 @@ gestionnaire_tache/
 ├── controllers/               # Logique de contrôle
 │   └── task_controller.py    # CRUD des tâches
 ├── utils/                     # Utilitaires
-│   └── database.py           # Abstraction de persistance
+│   └── database.py           # Interface database
 ├── styles/                    # Feuilles de style
 │   └── style.qss             # Thème visuel
 └── data/                      # Données
@@ -120,7 +120,7 @@ Pour modifier le thème :
 3. Sauvegardez le fichier
 4. Relancez l'application pour voir les changements
 
-Il n'y a pas de hot-reload, vous devez redémarrer l'app après chaque modification
+Il n'y a pas de hot-reload, il faut redémarrer l'app après chaque modification
 
 Développement avec Qt Designer
 
@@ -154,8 +154,8 @@ Utilisation
 
 Gestion des tâches
 
-1. DEDBFFCréer une tâche : Cliquez sur "Nouveau" et remplissez le formulaire
-2. Voir les détails : Double-cliquez sur une tâche ou sélectionnez + "Voir"
+1. Créer une tâche : Cliquez sur "Nouveau" et remplissez le formulaire
+2. Voir les détails : Double-cliquez sur une tâche ou sélectionnez + "Voir détails"
 3. Modifier : Sélectionnez une tâche et cliquez sur "Modifier"
 4. Clôturer : Marque la tâche comme "Réalisé" avec date de fin automatique
 5. Supprimer : Supprime définitivement la tâche (avec confirmation)
@@ -178,7 +178,7 @@ Gestion des tâches
 Dans la vue détaillée d'une tâche, il est possible :
 - Ajouter des commentaires avec horodatage automatique
 - Supprimer des commentaires existants
-- Suivre l'historique des notes sur la tâche
+- Voir tous les commentaires des notes sur la tâche
 
 Stockage des données
 
@@ -190,18 +190,18 @@ Structure :
   "tasks": [
     {
       "id": "uuid",
-      "titre": "Ma tâche",
+      "titre": "La tâche",
       "description": "Description détaillée",
       "date_debut": "2025-11-21T10:00:00",
       "date_fin": "2025-11-28T18:00:00",
       "etat": "En cours",
-      "commentaires": [...]
+      "commentaires": []
     }
   ]
 }
 ```
 
-Le fichier est créé automatiquement au premier lancement s'il n'existe pas.
+Le fichier est créé automatiquement au premier lancement s'il n'existe pas
 
 Technologies utilisées
 

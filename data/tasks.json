@@ -1,6 +1,15 @@
 {
   "tasks": [
     {
+      "id": "ae4fc77d-e495-4341-90d1-54bb5a4dcb20",
+      "titre": "Changer les ampoules",
+      "description": "plus de lumière",
+      "date_debut": "2025-11-23T16:01:25.564000",
+      "date_fin": "2025-11-30T16:01:25.564000",
+      "etat": "En cours",
+      "commentaires": []
+    },
+    {
       "id": "26b51dbd-c5ab-4619-b922-c54fe0279a7f",
       "titre": "Faire a manger",
       "description": "Repas du soir",

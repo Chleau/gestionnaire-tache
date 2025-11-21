@@ -1,9 +1,4 @@
-"""
-Gestion de la persistance des données.
-
-Cette classe abstraite permet de changer facilement le mode de stockage
-(JSON, SQLite, etc.) sans modifier le reste du code.
-"""
+#Gestion de la persistance des données.
 
 from abc import ABC, abstractmethod
 from typing import List
@@ -11,18 +6,18 @@ import json
 import os
 from pathlib import Path
 
-
+#Classe abstraite pour la persistance des données
 class Database(ABC):
-    """Classe abstraite pour la persistance des données."""
     
     @abstractmethod
+    #Charge toutes les tâches
+
     def load_tasks(self) -> List['Task']:
-        """Charge toutes les tâches."""
         pass
     
     @abstractmethod
+    #Sauvegarde toutes les tâches
     def save_tasks(self, tasks: List['Task']) -> bool:
-        """Sauvegarde toutes les tâches."""
         pass
 
 
@@ -42,18 +37,13 @@ class JSONDatabase(Database):
     }
     """
     
+    #Initialise la base de données JSON
     def __init__(self, filepath: str = "data/tasks.json"):
-        """
-        Initialise la base de données JSON.
-        
-        Args:
-            filepath: Chemin vers le fichier JSON
-        """
         self.filepath = filepath
         self._ensure_file_exists()
-    
+
+    #Crée le fichier et les dossiers s'ils n'existent pas
     def _ensure_file_exists(self):
-        """Crée le fichier et les dossiers s'ils n'existent pas."""
         path = Path(self.filepath)
         path.parent.mkdir(parents=True, exist_ok=True)
         
@@ -61,13 +51,9 @@ class JSONDatabase(Database):
             with open(self.filepath, 'w', encoding='utf-8') as f:
                 json.dump({"tasks": []}, f, ensure_ascii=False, indent=2)
     
+    #Charge les tâches depuis le fichier JSON
     def load_tasks(self) -> List['Task']:
-        """
-        Charge les tâches depuis le fichier JSON.
         
-        Returns:
-            Liste des tâches
-        """
         from models.task import Task
         
         try:
@@ -78,16 +64,9 @@ class JSONDatabase(Database):
             print(f"Erreur lors du chargement : {e}")
             return []
     
+    #Sauvegarde les tâches dans le fichier JSON
     def save_tasks(self, tasks: List['Task']) -> bool:
-        """
-        Sauvegarde les tâches dans le fichier JSON.
-        
-        Args:
-            tasks: Liste des tâches à sauvegarder
-            
-        Returns:
-            True si la sauvegarde a réussi, False sinon
-        """
+  
         try:
             data = {
                 "tasks": [task.to_dict() for task in tasks]
@@ -102,29 +81,3 @@ class JSONDatabase(Database):
             return False
 
 
-# TODO: Implémentation SQLite (pour comparaison dans les explications)
-class SQLiteDatabase(Database):
-    """
-    Implémentation SQLite de la persistance (à implémenter si souhaité).
-    
-    Avantages vs JSON :
-    - Meilleure performance pour grandes quantités de données
-    - Requêtes SQL plus puissantes (filtres, joins, etc.)
-    - Gestion native des transactions
-    
-    Inconvénients vs JSON :
-    - Plus complexe à mettre en place
-    - Moins lisible pour un humain
-    - Nécessite une bibliothèque (sqlite3)
-    """
-    
-    def __init__(self, filepath: str = "data/tasks.db"):
-        self.filepath = filepath
-        # TODO: Implémenter la connexion et la création des tables
-        raise NotImplementedError("SQLite non encore implémenté")
-    
-    def load_tasks(self) -> List['Task']:
-        raise NotImplementedError("SQLite non encore implémenté")
-    
-    def save_tasks(self, tasks: List['Task']) -> bool:
-        raise NotImplementedError("SQLite non encore implémenté")
